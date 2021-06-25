@@ -38,12 +38,14 @@ elif args.cuda:
 
 # parameter
 opt = vars(args)
+# 2017-01-01 - 2017-05-06
 if opt['dataset'] == 'bay':
     opt['timestamp'] = 12       # 5min: 12 or 30min: 2
     opt['train_time'] = 105     # days for training 
     opt['recent_time'] = 1      # bay: 1 hour, nyc: 2hour
     opt['num_feature'] = 6 * 2      # length of input feature
     opt['time_feature'] = 31        # length of time feature
+# 2014-01-15 -- 2017-12-31
 elif opt['dataset'] == 'nyc':
     opt['timestamp'] = 2       # 5min: 12 or 30min: 2
     opt['train_time'] = 289     # days for training
@@ -51,7 +53,9 @@ elif opt['dataset'] == 'nyc':
     opt['num_feature'] = 2 * 2      # length of input feature
     opt['time_feature'] = 39        # length of time feature
 
-opt['save_path'] = opt['root_path'] + 'checkpoint/' + opt['dataset'] + '/'
+opt['save_path'] = opt['root_path'] + opt['dataset'] + '/checkpoint/'
+opt['data_path'] = opt['root_path'] + opt['dataset'] + '/data/'
+opt['result_path'] = opt['root_path'] + opt['dataset'] + '/result/'
 
 opt['train_time'] = opt['train_time'] * opt['timestamp'] * 24
 if __name__ == "__main__":

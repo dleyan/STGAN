@@ -8,10 +8,10 @@ class data_loader(data.Dataset):
 
         self.opt = opt
 
-        data_path = opt['root_path'] + opt['dataset'] + '/data.npy'     # traffic data
-        feature_path = opt['root_path'] + opt['dataset'] + '/time_features.txt'     # time feature
-        graph_path = opt['root_path'] + opt['dataset'] + '/node_subgraph.npy'     # (num_node, n, n), the subgraph of each node
-        adj_path = opt['root_path'] + opt['dataset'] + '/node_adjacent.txt'     # (num_node, n), the adjacent of each node
+        data_path = opt['data_path'] + '/data.npy'     # traffic data
+        feature_path = opt['data_path'] + '/time_features.txt'     # time feature
+        graph_path = opt['data_path'] + '/node_subgraph.npy'     # (num_node, n, n), the subgraph of each node
+        adj_path = opt['data_path'] + '/node_adjacent.txt'     # (num_node, n), the adjacent of each node
 
         self.data = torch.tensor(np.load(data_path), dtype=torch.float)
         self.time_features = torch.tensor(np.loadtxt(feature_path), dtype=torch.float)
@@ -65,7 +65,7 @@ class data_loader(data.Dataset):
 
     def weight(self):
         # std
-        dists = torch.tensor(np.loadtxt(self.opt['root_path'] + self.opt['dataset'] + '/node_dist.txt'), dtype=torch.float)
+        dists = torch.tensor(np.loadtxt(self.opt['data_path'] + '/node_dist.txt'), dtype=torch.float)
         delta = torch.std(dists)
         self.graph = torch.exp(-np.divide(np.power(self.graph, 2), np.power(delta, 2)))
 
