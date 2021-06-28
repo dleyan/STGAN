@@ -72,7 +72,6 @@ class data_loader(data.Dataset):
     def calculate_normalized_laplacian(self, adj):
         """
         # L = D^-1/2 (D-A) D^-1/2 = I - D^-1/2 A D^-1/2
-        # L = D^(-1)A
         # D = diag(A 1)
         :param adj:
         :return:
