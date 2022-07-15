@@ -27,3 +27,5 @@ where the `data.npy` is the traffic data in Bay area or New York City;
 `node_dist.txt` represents the distance between nodes.
 
 We also provide the information of the selected sensors in our paper, the file is `vds_info.csv`. 
+
+> If you have any question about the code or the paper, please contact me by email (dleyan@mail.ustc.edu.cn). 
