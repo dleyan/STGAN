@@ -1,6 +1,6 @@
 # Graph Convolutional Adversarial Networks for Spatio-Temporal Anomaly Detection
 
-Two datasets are available at [Google Drive](https://drive.google.com/file/d/11gCeJ5xak9kXsP5KQ6Yv1aJNIj8fn0GZ/view?usp=sharing).
+Two datasets are available at [Google Drive](https://drive.google.com/drive/folders/1U4ehoLEV83JLpPIXbopng0ydwfOAFLqN?usp=share_link).
 **If you use the data, please cite the following paper.**
 ```
 @ARTICLE{9669110,
@@ -27,5 +27,10 @@ where the `data.npy` is the traffic data in Bay area or New York City;
 `node_dist.txt` represents the distance between nodes.
 
 We also provide the information of the selected sensors in our paper, the file is `vds_info.csv`. 
+
+------------------------------------------------------
+We have updated the ground truth of PeMS datasets. The ground truth of NYC dataset is provided by the authors of paper [Detecting Collective Anomalies from Multiple Spatio-Temporal Datasets across Different Domains](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Collective20anomalies-GIS2015_yu.pdf). The anomaly labels on PeMS dataset are collected from [California's Performance Measurement System](https://pems.dot.ca.gov/). Note that we didn't delete the CHP incidents with duration<=0 since we extended the end time of each incident by 1 hour to include the impact of the traffic accidents.
+
+If you need anomaly labels for other times, please refer to [CHP incident](https://pems.dot.ca.gov/?dnode=State&content=incidents&tab=inc_detail) and [LCS Report](https://pems.dot.ca.gov/?q=cnt&s_time_id=1658620800&e_time_id=1666655940&lcs_date_type=0&lcs_filter_mode=show_adv&gn=week&html_x=42&report_form=1&facility%5B%5D=HOV&dnode=State&content=lcs&tab=lcs_list). I hope they will be helpful to you.
 
 > If you have any question about the code or the paper, please contact me by email (dleyan@mail.ustc.edu.cn). 
