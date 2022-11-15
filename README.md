@@ -29,7 +29,7 @@ where the `data.npy` is the traffic data in Bay area or New York City;
 We also provide the information of the selected sensors in our paper, the file is `vds_info.csv`. 
 
 ------------------------------------------------------
-We have updated the ground truth of PeMS datasets. The ground truth of NYC dataset is provided by the authors of paper [Detecting Collective Anomalies from Multiple Spatio-Temporal Datasets across Different Domains](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Collective20anomalies-GIS2015_yu.pdf). The anomaly labels on PeMS dataset are collected from [California's Performance Measurement System](https://pems.dot.ca.gov/). Note that we didn't delete the CHP incidents with duration<=0 since we extended the end time of each incident by 1 hour to include the impact of the traffic accidents.
+We have updated the ground truth of PeMS datasets. Note that we didn't delete the CHP incidents with duration<=0 since we extended the end time of each incident by 1 hour to include the impact of the traffic accidents. The ground truth of NYC dataset is provided by the authors of paper [Detecting Collective Anomalies from Multiple Spatio-Temporal Datasets across Different Domains](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Collective20anomalies-GIS2015_yu.pdf).
 
 If you need anomaly labels for other times, please refer to [CHP incident](https://pems.dot.ca.gov/?dnode=State&content=incidents&tab=inc_detail) and [LCS Report](https://pems.dot.ca.gov/?q=cnt&s_time_id=1658620800&e_time_id=1666655940&lcs_date_type=0&lcs_filter_mode=show_adv&gn=week&html_x=42&report_form=1&facility%5B%5D=HOV&dnode=State&content=lcs&tab=lcs_list). I hope they will be helpful to you.
 
